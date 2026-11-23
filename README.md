@@ -66,8 +66,13 @@ links point to `http://localhost:3000`. There are no secrets in this project.
 
 ## Deployment
 
-The project builds with `npm run build` and runs on any host that supports Next.js
-(Vercel or Netlify, for example). Set `NEXT_PUBLIC_SITE_URL` there.
+Live site: <https://tatiana-gurnak-3d.netlify.app>
+
+The site is hosted on [Netlify](https://www.netlify.com) and is deployed from the `main` branch
+of this repository: every push to `main` builds and publishes it automatically. Netlify detects
+Next.js on its own (build command `npm run build`). The only setting needed is the environment
+variable `NEXT_PUBLIC_SITE_URL` (see above). The project also builds and runs on any other host
+that supports Next.js, for example Vercel.
 
 ## Frame sequences
 
