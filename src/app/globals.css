@@ -1,0 +1,144 @@
+:root {
+  /* White and near-black, with one warm greige taken from the reference's
+     photographic overlay. Type does the decorating. */
+  --white: #fff;
+  --ink: #171512;
+  --sand: #efe9e1;
+  --greige: rgb(110 92 78 / 0.62); /* veil over photographs */
+  --muted: #6c655d;
+  --line: rgb(23 21 18 / 0.16);
+  --paper: var(--white); /* used by the gallery dialog */
+
+  --margin: clamp(20px, 5vw, 80px);
+  --font-sans: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-instrument), "Times New Roman", serif;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.skip {
+  position: fixed;
+  left: var(--margin);
+  top: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--white);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  transform: none;
+}
+
+/* Tiny spaced capitals for navigation, buttons and labels. */
+.tiny {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Outlined button, white by default; add .dark for use on white. */
+.outline {
+  display: inline-block;
+  padding: 13px 22px;
+  border: 1px solid currentColor;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.outline:hover,
+.outline:focus-visible {
+  background: #fff;
+  color: var(--ink);
+}
+
+.outline.dark:hover,
+.outline.dark:focus-visible {
+  background: var(--ink);
+  color: #fff;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

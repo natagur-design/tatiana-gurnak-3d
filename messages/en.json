@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "Tatiana Gurnak | 3D visualization of interiors and exteriors",
+    "description": "Realistic 3D renders of interiors, houses and facades for designers, architects and developers. Furniture selection and modeling, design from a plan or references, 360° panoramas."
+  },
+  "brand": {
+    "name": "Tatiana Gurnak"
+  },
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "skip": "Skip to content",
+    "menu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "kicker": "3D visualization of",
+    "word1": "Interiors",
+    "and": "and",
+    "word2": "Exteriors",
+    "note": "3D visualization of interiors and exteriors for designers, architects and developers.",
+    "cta": "Get in touch",
+    "imageAlt": "An open-plan dining area with black chairs, a round table and floor-to-ceiling windows"
+  },
+  "projects": {
+    "heading": "Projects",
+    "previous": "Previous",
+    "next": "Next",
+    "items": {
+      "bedroom": {
+        "title": "Modern Luxury Master Bedroom",
+        "kind": "Interior, bedroom",
+        "description": "A calm bedroom built on soft neutral colors, marble flooring, warm lighting and elegant modern details."
+      },
+      "living": {
+        "title": "Modern Luxury Living Room",
+        "kind": "Interior, living room",
+        "description": "A sophisticated open-concept living space featuring a cozy fireplace, elegant TV wall, and relaxing lounge area. Designed with soft neutral tones, natural textures, and refined lighting to create a timeless and welcoming atmosphere."
+      },
+      "house": {
+        "title": "Private House",
+        "kind": "Exterior, house",
+        "description": "A private house with timber and concrete facades and an integrated garage, rendered in daylight."
+      },
+      "kitchen": {
+        "title": "Cozy Kitchen",
+        "kind": "Interior, kitchen",
+        "description": "A kitchen in soft greige with an island, brass details and daylight from the window."
+      },
+      "office": {
+        "title": "Home Office",
+        "kind": "Interior, office",
+        "description": "A home office with built-in shelving, warm timber panels and a ceiling fan."
+      },
+      "openplan": {
+        "title": "Open-Concept Living & Kitchen",
+        "kind": "Interior, open plan",
+        "description": "A clean and elegant interior that balances modern minimalism and luxury comfort. A sophisticated kitchen, a cozy lounge area and panoramic city views in one open space."
+      },
+      "chalet": {
+        "title": "Mountain Chalet",
+        "kind": "Exterior, house",
+        "description": "A mountain chalet with timber cladding and a dark metal roof, a terrace with a hot tub and a view over the snowy slope."
+      },
+      "luxbedroom": {
+        "title": "Modern Luxury Bedroom",
+        "kind": "Interior, bedroom",
+        "description": "A bedroom with a travertine and brass headboard wall, soft bouclé seating and a calm, warm palette."
+      },
+      "livingroom": {
+        "title": "Living Room",
+        "kind": "Interior, living room",
+        "description": "An open living and dining area with a curved sofa, a marble table and a tall window, lit by sculptural pendant lights."
+      },
+      "closet": {
+        "title": "Modern Walk-In Closet",
+        "kind": "Interior, wardrobe",
+        "description": "A walk-in closet in graphite with open shelving, drawers and soft built-in lighting."
+      },
+      "study": {
+        "title": "Living and Study Space",
+        "kind": "Interior, living room and study",
+        "description": "A compact living room with a work corner by the window and a timber wall unit with integrated lighting."
+      }
+    }
+  },
+  "banner": {
+    "line1": "Show the space",
+    "line2": "before it is built"
+  },
+  "services": {
+    "heading": "Services",
+    "items": {
+      "visualization": {
+        "title": "3D visualization",
+        "text": "Photorealistic renders of rooms, houses and facades."
+      },
+      "furniture": {
+        "title": "Furniture selection and layout",
+        "text": "Choosing and arranging furniture and decor for the space."
+      },
+      "modeling": {
+        "title": "Furniture and decor modeling",
+        "text": "Custom 3D models when the right piece does not exist yet."
+      },
+      "design": {
+        "title": "Design from a plan, photo or brief",
+        "text": "Starting from a floor plan, a photo of the room, references or a technical brief."
+      },
+      "panoramas": {
+        "title": "360° panoramas",
+        "text": "Interactive panoramas that let a client look around the space."
+      },
+      "drawings": {
+        "title": "Floor plans and drawings",
+        "text": "Clear 2D drawings in AutoCAD and ArchiCAD: floor plans, furniture layouts, elevations and sections."
+      }
+    }
+  },
+  "about": {
+    "heading": "Hello, I'm Tatiana",
+    "text": "I'm a 3D visualizer of interiors and exteriors. I turn plans, photos and references into realistic renders, so designers and architects can show a space before it is built. I have worked with interior designers and architects, so I understand the tasks and the specifics of their projects. I also draw floor plans in AutoCAD and ArchiCAD.",
+    "toolsLabel": "Software",
+    "tools": "3ds Max, Corona Render, ArchiCAD, AutoCAD, Photoshop",
+    "terms": {
+      "prepayment": "No prepayment",
+      "revisions": "Unlimited revisions",
+      "renders": "Unlimited final renders"
+    }
+  },
+  "footer": {
+    "heading": "Let's talk",
+    "intro": "Tell me about your project — let's make it real.",
+    "menu": "Menu",
+    "top": "Back to top",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "Email",
+    "instagram": "Instagram",
+    "rights": "All rights reserved",
+    "privacy": "Privacy policy"
+  },
+  "gallery": {
+    "close": "Close",
+    "previous": "Previous image",
+    "next": "Next image",
+    "counter": "Image {current} of {total}",
+    "back": "Projects",
+    "nextProject": "Next project",
+    "enlarge": "Open full size"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: 23 November 2026",
+    "back": "Back to home",
+    "sections": [
+      {
+        "heading": "Who I am",
+        "text": "This website is the portfolio of Tatiana Gurnak, a 3D visualizer of interiors and exteriors. In this policy “I” and “me” mean Tatiana Gurnak."
+      },
+      {
+        "heading": "What this website collects",
+        "text": "Nothing. The website has no contact forms, accounts, analytics or advertising tools, and it does not set cookies. I do not collect or store personal data about visitors."
+      },
+      {
+        "heading": "Hosting",
+        "text": "The website is delivered by a hosting provider. Like any web server, it may keep basic technical logs (such as IP address, browser type and time of the request) to keep the site secure and running. I do not use these logs to identify you."
+      },
+      {
+        "heading": "When you contact me",
+        "text": "If you write to me on WhatsApp, Instagram or by email, I receive what you send, such as your name, your message and any plans or photos. I use it only to reply to you and to work on your project, and I do not sell it or share it with anyone else. These services have their own privacy policies."
+      },
+      {
+        "heading": "Links to other websites",
+        "text": "The site links to WhatsApp and Instagram. I am not responsible for how those services handle your data."
+      },
+      {
+        "heading": "Your rights",
+        "text": "You can ask me at any time to show, correct or delete the messages and files you have sent me."
+      },
+      {
+        "heading": "Changes",
+        "text": "I may update this policy from time to time. The date at the top shows when it was last changed."
+      },
+      {
+        "heading": "Contact",
+        "text": "For any question about this policy, write to me using the contacts at the bottom of the page."
+      }
+    ]
+  }
+}

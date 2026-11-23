@@ -1,0 +1,279 @@
+/* A project, opened as a page of its own. White, like the rest of the site. */
+.dialog {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0 0 clamp(28px, 4vw, 48px);
+  border: 0;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+.dialog::backdrop {
+  background: var(--white);
+}
+
+.dialog button {
+  text-align: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(28px, 4vw, 44px) var(--margin) 0;
+}
+
+.top button {
+  padding: 6px 0;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  /* The last line of the description sits level with the subtitle. */
+  align-items: last baseline;
+  gap: 16px 48px;
+  padding: clamp(24px, 3.4vw, 40px) var(--margin) 0;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 5.4vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.description {
+  max-width: 38ch;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.kind {
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+/* The photos in a row, each at its own proportions and the same height. */
+.track {
+  display: flex;
+  gap: 16px;
+  padding: clamp(32px, 4.4vw, 60px) var(--margin) 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--margin);
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  position: relative;
+  flex: none;
+  height: clamp(220px, 46vh, 520px);
+  scroll-snap-align: start;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+/* Each photo opens at full size when clicked. */
+.photo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  cursor: zoom-in;
+}
+
+.image {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.image[data-loaded="true"] {
+  opacity: 1;
+}
+
+/* The last card of the row: the next project. */
+.nextSlide {
+  aspect-ratio: 3 / 2;
+}
+
+.nextCard {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2vw, 26px);
+  color: #fff;
+}
+
+.nextImage {
+  object-fit: cover;
+  opacity: 0;
+  filter: brightness(0.55);
+  transition:
+    opacity 0.9s ease,
+    filter 0.3s ease,
+    transform 0.6s ease;
+}
+
+.nextImage[data-loaded="true"] {
+  opacity: 1;
+}
+
+.nextCard:hover .nextImage,
+.nextCard:focus-visible .nextImage {
+  filter: brightness(0.4);
+  transform: scale(1.03);
+}
+
+.nextLabel,
+.nextTitle {
+  position: relative;
+}
+
+.nextTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(28px, 4vw, 48px) var(--margin) 0;
+}
+
+.line {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.thumb {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  display: block;
+  height: 3px;
+  background: var(--ink);
+  transition: margin-left 0.1s linear;
+}
+
+.arrows {
+  display: flex;
+  gap: 18px;
+  font-size: 1.125rem;
+}
+
+.arrows button {
+  padding: 4px 6px;
+}
+
+/* The photo at full size, over the whole screen. */
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background: var(--white);
+}
+
+.viewerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(20px, 3vw, 36px) var(--margin) 0;
+}
+
+.viewerBar button {
+  padding: 6px 0;
+}
+
+.viewerImage {
+  position: relative;
+  margin: clamp(12px, 2vw, 24px) var(--margin);
+}
+
+.viewerPhoto {
+  object-fit: contain;
+}
+
+.viewerArrows {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  padding: 0 var(--margin) clamp(20px, 3vw, 32px);
+  font-size: 1.125rem;
+}
+
+.viewerArrows button {
+  padding: 4px 6px;
+}
+
+/* Phone: no sideways row. One big photo, the others smaller below it, and
+   the whole card scrolls up and down. */
+@media (max-width: 700px) {
+  .head {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 20px;
+    padding-top: clamp(44px, 13vw, 64px);
+  }
+
+  .title {
+    font-size: 13vw;
+  }
+
+  .track {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 36px;
+    padding-right: var(--margin);
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .slide {
+    height: auto;
+    width: 100%;
+  }
+
+  .slide:first-child,
+  .nextSlide {
+    grid-column: 1 / -1;
+  }
+
+  /* The small ones are squares, whatever the photo's own shape. */
+  .slide:not(:first-child):not(.nextSlide) {
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .controls {
+    display: none;
+  }
+}

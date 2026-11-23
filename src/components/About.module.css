@@ -1,0 +1,75 @@
+.section {
+  background: var(--sand);
+  padding: clamp(56px, 8vw, 120px) var(--margin);
+}
+
+/* Heading on the left, a photo frame opposite it on the right. */
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  align-items: start;
+  gap: clamp(28px, 6vw, 96px);
+}
+
+.heading {
+  max-width: 14ch;
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 9vw, 9rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* The same width as the right-hand column below, so its edges line up with
+   the software list and the terms. */
+.photo {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: rgb(23 21 18 / 0.07);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(28px, 6vw, 96px);
+  margin-top: clamp(32px, 5vw, 72px);
+}
+
+.text {
+  max-width: 50ch;
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.tools {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.tools dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.terms {
+  display: grid;
+  gap: 4px;
+  margin-top: 24px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.15;
+}
+
+@media (max-width: 800px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

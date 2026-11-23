@@ -1,0 +1,174 @@
+.section {
+  background: var(--white);
+  padding: clamp(80px, 12vw, 192px) 0 clamp(96px, 12vw, 176px) var(--margin);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 48px);
+}
+
+/* The section name runs up the left side, set very large. */
+.label {
+  align-self: start;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8.5vw, 8rem);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.main {
+  min-width: 0;
+}
+
+/* The row of cards runs off the right edge of the page. */
+.track {
+  display: flex;
+  gap: clamp(12px, 1.6vw, 24px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-right: var(--margin);
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track > li {
+  flex: 0 0 clamp(190px, 22vw, 320px);
+  scroll-snap-align: start;
+}
+
+.card {
+  display: block;
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.card:hover .image,
+.card:focus-visible .image {
+  transform: scale(1.04);
+}
+
+.name {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.kind {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: clamp(28px, 4vw, 48px);
+  padding-right: var(--margin);
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  position: relative;
+}
+
+.thumb {
+  display: block;
+  height: 3px;
+  margin-top: -1px;
+  background: var(--ink);
+  transition: margin-left 0.1s linear;
+}
+
+.arrows {
+  display: flex;
+  gap: 18px;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.arrows button {
+  padding: 6px 4px;
+}
+
+@media (max-width: 700px) {
+  /* Phone: the arrows sit opposite the word PROJECTS, level with its
+     baseline; the row of cards and the thin line follow underneath. */
+  .layout {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "label arrows"
+      "track track"
+      "line line";
+    column-gap: 16px;
+    row-gap: 0;
+  }
+
+  .main,
+  .controls {
+    display: contents;
+  }
+
+  .label {
+    grid-area: label;
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: clamp(3rem, 16vw, 5rem);
+    margin-bottom: 28px;
+  }
+
+  .arrows {
+    grid-area: arrows;
+    align-self: end;
+    margin-bottom: 22px;
+    padding-right: var(--margin);
+  }
+
+  .track {
+    grid-area: track;
+  }
+
+  .line {
+    grid-area: line;
+    align-self: center;
+    margin: 28px var(--margin) 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .thumb {
+    transition: none;
+  }
+
+  .card:hover .image,
+  .card:focus-visible .image {
+    transform: none;
+  }
+}

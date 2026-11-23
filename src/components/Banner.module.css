@@ -1,0 +1,99 @@
+.banner {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--sand);
+  /* Cocoa type: this clip is a bright room. */
+  color: #2e231c;
+  /* Extra room on top: the fixed header sits over this screen. */
+  padding: clamp(92px, 9vw, 130px) var(--margin) clamp(24px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+}
+
+.image,
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* A thin light wash so the dark lettering holds on the brightest windows. */
+.veil {
+  position: absolute;
+  inset: 0;
+  background: rgb(246 241 233 / 0.25);
+  pointer-events: none;
+}
+
+.shell {
+  display: block;
+}
+
+.line1,
+.line2 {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 7.4vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 40px rgb(246 241 233 / 0.5);
+}
+
+.line1 {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 9ch;
+}
+
+.line2 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-self: end;
+  justify-self: end;
+  max-width: 10ch;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  /* Phone: the clip fills the whole screen, the first line of the sentence
+     at the top, the second at the bottom. */
+  .line1,
+  .line2 {
+    font-size: 18.5vw;
+    line-height: 0.9;
+    /* Set like the words on the first screen: plain weight, no outline,
+       the same tight spacing. */
+    letter-spacing: -0.02em;
+    -webkit-text-stroke: 0;
+    /* No light glow behind the words on a phone. */
+    text-shadow: none;
+  }
+
+  .banner {
+    /* The header covers the top 70px, so the same gap shows above the first
+       line and below the last. */
+    padding: 126px var(--margin) 56px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 22px;
+  }
+
+  .line2 {
+    grid-row: 3;
+  }
+}
