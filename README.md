@@ -9,7 +9,7 @@ no forms, no analytics, no cookies.
 
 - [Next.js](https://nextjs.org) (App Router) and TypeScript
 - CSS Modules, CSS variables, Grid and Flexbox
-- [next-intl](https://next-intl.dev) for texts and localized URLs (English for now)
+- [next-intl](https://next-intl.dev) for texts and localized URLs: English, Russian and Ukrainian (`/en`, `/ru`, `/uk`)
 - [GSAP](https://gsap.com) with ScrollTrigger for the scroll animations
 - `next/image` and `next/font` for images and fonts
 
@@ -37,7 +37,7 @@ Open <http://localhost:3000/en>.
 ## Project structure
 
 ```
-messages/en.json          all texts (translations live here, one file per language)
+messages/<lang>.json      all texts, one file per language (en, ru, uk)
 public/images/            portfolio photos, named <project>-<number>.jpg
 public/hero/, banner/     frame sequences for the two scroll-driven videos
 src/app/[locale]/         the page, the privacy policy page, layout and metadata
@@ -53,9 +53,10 @@ src/lib/frames.ts         plays a frame sequence on a canvas, driven by scroll
 - **Contacts:** edit `src/config/contacts.ts`. A link left empty is hidden on the site
   (the email icon is the exception: it stays on show without a link until an address is set).
 - **Add a project:** put photos in `public/images/` (the first one is the cover), add an entry to
-  `src/data/projects.ts`, and add its title, kind and description to `messages/en.json` under
+  `src/data/projects.ts`, and add its title, kind and description to every `messages/<lang>.json` under
   `projects.items.<id>`.
-- **Texts:** everything visible is in `messages/en.json`.
+- **Texts:** everything visible is in `messages/en.json`, `messages/ru.json` and `messages/uk.json`. Keep the three files in step: the same keys in each.
+- **Add a language:** add a file in `messages/`, add the code to `locales` in `src/i18n/routing.ts` (and its label to `LOCALE_LABELS`), and, if the script needs other letters than Latin, a font in `src/app/[locale]/layout.tsx`. The language switcher picks it up.
 
 ## Environment
 

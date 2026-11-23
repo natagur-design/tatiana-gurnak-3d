@@ -39,6 +39,12 @@
 
 .right {
   justify-self: end;
+  align-items: center;
+}
+
+/* A little room between the links and the language switch. */
+.lang {
+  margin-left: clamp(4px, 1vw, 16px);
 }
 
 .brand {

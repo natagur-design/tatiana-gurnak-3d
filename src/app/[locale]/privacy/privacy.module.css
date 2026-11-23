@@ -43,3 +43,10 @@
   font-size: 1.0625rem;
   line-height: 1.65;
 }
+
+/* "Политика конфиденциальности" is one very long word; keep it on screen. */
+:global(:lang(ru)) .title,
+:global(:lang(uk)) .title {
+  font-size: clamp(1.75rem, 8vw, 9rem);
+  overflow-wrap: anywhere;
+}

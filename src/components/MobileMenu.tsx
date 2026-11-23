@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import LanguageSwitcher from "./LanguageSwitcher";
 import styles from "./MobileMenu.module.css";
 
 // Gives the page its scrolling back (the open sheet holds it still).
@@ -86,7 +87,7 @@ export default function MobileMenu({ items, openLabel, closeLabel }: Props) {
       {open
         ? createPortal(
             <nav id="site-menu" className={styles.sheet} aria-label="Menu">
-              <ul>
+              <ul className={styles.links}>
                 {items.map((item) => (
                   <li key={item.href}>
                     <a
@@ -99,6 +100,7 @@ export default function MobileMenu({ items, openLabel, closeLabel }: Props) {
                   </li>
                 ))}
               </ul>
+              <LanguageSwitcher className={`tiny ${styles.language}`} />
             </nav>,
             document.body,
           )

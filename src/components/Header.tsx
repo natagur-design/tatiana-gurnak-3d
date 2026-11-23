@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { contacts } from "@/config/contacts";
 import { Link } from "@/i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import styles from "./Header.module.css";
 
@@ -36,6 +37,7 @@ export default async function Header({ solid = false, base = "" }: Props) {
         <a href={contacts.instagram} target="_blank" rel="noopener noreferrer">
           Instagram
         </a>
+        <LanguageSwitcher className={styles.lang} />
       </div>
 
       <MobileMenu

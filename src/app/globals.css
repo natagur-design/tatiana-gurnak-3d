@@ -16,6 +16,16 @@
   color-scheme: light;
 }
 
+/* Russian and Ukrainian: fonts that have Cyrillic letters. */
+:root:lang(ru),
+:root:lang(uk) {
+  --font-sans: var(--font-cyr-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-cyr-serif), "Times New Roman", serif;
+  /* The Cyrillic serif has a width axis; this narrows it to the look of
+     Instrument Serif. Fonts without the axis ignore it. */
+  font-stretch: 62.5%;
+}
+
 *,
 *::before,
 *::after {

@@ -1,12 +1,14 @@
 import { defineRouting } from "next-intl/routing";
 
-// English only for now. The Russian and Ukrainian texts are kept in
-// messages/_later/ and can be brought back by adding "ru" and "uk" here,
-// moving the files back to messages/ and re-adding a language switcher.
+// Languages: English (default), Russian and Ukrainian. Texts live in
+// messages/<locale>.json. A new language needs its own file here, an entry
+// in LOCALE_LABELS and, for Cyrillic or other scripts, a font in the layout.
 export const routing = defineRouting({
-  locales: ["en"],
+  locales: ["en", "ru", "uk"],
   defaultLocale: "en",
   localePrefix: "always",
 });
 
 export type Locale = (typeof routing.locales)[number];
+
+export const LOCALE_LABELS: Record<Locale, string> = { en: "EN", ru: "RU", uk: "UK" };

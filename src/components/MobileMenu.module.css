@@ -58,16 +58,28 @@
   animation: sheet-in 0.3s ease both;
 }
 
-.sheet ul {
+.sheet {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.links {
   width: 100%;
   border-top: 1px solid var(--line);
 }
 
-.sheet li {
+/* The language switch sits under the links. */
+.sheet .language {
+  margin-top: 36px;
+  align-self: flex-start;
+  gap: 22px;
+}
+
+.links li {
   border-bottom: 1px solid var(--line);
 }
 
-.sheet a {
+.links li a {
   display: block;
   padding: 16px 0;
   font-family: var(--font-serif);
