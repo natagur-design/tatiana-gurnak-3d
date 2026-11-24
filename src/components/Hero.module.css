@@ -191,13 +191,13 @@
    so the two big words are set smaller to fit on one line, with tighter letters. */
 :global(:lang(ru)) .words,
 :global(:lang(uk)) .words {
-  font-size: clamp(2.5rem, 6.8vw, 10rem);
+  font-size: clamp(2.5rem, 8.2vw, 12rem);
   letter-spacing: -0.04em;
 }
 
 @media (max-width: 760px) {
   :global(:lang(ru)) .words,
   :global(:lang(uk)) .words {
-    font-size: 13vw;
+    font-size: 15vw;
   }
 }

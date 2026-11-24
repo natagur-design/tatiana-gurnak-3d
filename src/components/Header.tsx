@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { contacts } from "@/config/contacts";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
@@ -26,6 +25,7 @@ export default async function Header({ solid = false, base = "" }: Props) {
         <a href={`${base}#projects`}>{nav("projects")}</a>
         <a href={`${base}#services`}>{nav("services")}</a>
         <a href={`${base}#about`}>{nav("about")}</a>
+        <a href={`${base}#contact`}>{nav("contact")}</a>
       </nav>
 
       <Link href="/" className={styles.brand}>
@@ -33,10 +33,6 @@ export default async function Header({ solid = false, base = "" }: Props) {
       </Link>
 
       <div className={styles.right}>
-        <a href={`${base}#contact`}>{nav("contact")}</a>
-        <a href={contacts.instagram} target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
         <LanguageSwitcher className={styles.lang} />
       </div>
 
@@ -46,7 +42,6 @@ export default async function Header({ solid = false, base = "" }: Props) {
           { label: nav("services"), href: `${base}#services` },
           { label: nav("about"), href: `${base}#about` },
           { label: nav("contact"), href: `${base}#contact` },
-          { label: "Instagram", href: contacts.instagram, external: true },
         ]}
         openLabel={nav("menu")}
         closeLabel={nav("closeMenu")}

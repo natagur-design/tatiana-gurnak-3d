@@ -173,8 +173,25 @@
   }
 }
 
-:global(:lang(ru)) .label,
-:global(:lang(uk)) .label {
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  letter-spacing: -0.03em;
+/* Russian and Ukrainian: the vertical word is sized so that it is exactly as
+   tall as the pictures beside it (a picture is 4:3 tall, and its width is
+   the clamp below). 3.92 and 3.86 are the lengths of the two words in em. */
+@media (min-width: 701px) {
+  :global(:lang(ru)) .label {
+    font-size: calc(clamp(190px, 22vw, 320px) * 4 / 3 / 3.92);
+    letter-spacing: -0.03em;
+  }
+
+  :global(:lang(uk)) .label {
+    font-size: calc(clamp(190px, 22vw, 320px) * 4 / 3 / 3.86);
+    letter-spacing: -0.03em;
+  }
+}
+
+@media (max-width: 700px) {
+  :global(:lang(ru)) .label,
+  :global(:lang(uk)) .label {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+    letter-spacing: -0.03em;
+  }
 }
