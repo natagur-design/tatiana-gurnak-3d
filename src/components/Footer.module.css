@@ -150,10 +150,17 @@
   letter-spacing: -0.04em;
 }
 
-/* The two words one under the other, so each reads as a word of its own. On a
-   phone they fall onto two lines by themselves at the size above. */
+/* Desktop. Russian: the two words on one line with a wider gap between them.
+   Ukrainian: the two words one under the other. On a phone both fall onto two
+   lines by themselves at the size above. */
 @media (min-width: 761px) {
-  :global(:lang(ru)) .heading,
+  :global(:lang(ru)) .heading {
+    font-size: 10.8vw;
+    letter-spacing: -0.03em;
+    word-spacing: 0.3em;
+    white-space: nowrap;
+  }
+
   :global(:lang(uk)) .heading {
     font-size: 10vw;
     max-width: 5.8em;
