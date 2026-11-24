@@ -188,15 +188,16 @@
 }
 
 /* Russian and Ukrainian words are longer and the Cyrillic capitals are wider,
-   so the two big words are set smaller to fit on one line. */
+   so the two big words are set smaller to fit on one line, with tighter letters. */
 :global(:lang(ru)) .words,
 :global(:lang(uk)) .words {
-  font-size: clamp(3rem, 8.2vw, 12rem);
+  font-size: clamp(2.5rem, 6.8vw, 10rem);
+  letter-spacing: -0.04em;
 }
 
 @media (max-width: 760px) {
   :global(:lang(ru)) .words,
   :global(:lang(uk)) .words {
-    font-size: 16.5vw;
+    font-size: 13vw;
   }
 }

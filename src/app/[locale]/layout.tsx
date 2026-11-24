@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, Inter, Instrument_Serif, Noto_Serif_Display } from "next/font/google";
+import { Hanken_Grotesk, Inter, Instrument_Serif, Playfair } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -25,9 +25,9 @@ const hanken = Hanken_Grotesk({
 // Ukrainian pages use these two instead (see the :lang rule in globals.css).
 // They are not preloaded: the browser fetches them only when Cyrillic text
 // is on the page.
-const cyrillicSerif = Noto_Serif_Display({
+const cyrillicSerif = Playfair({
   subsets: ["cyrillic", "latin"],
-  axes: ["wdth"],
+  axes: ["opsz", "wdth"],
   variable: "--font-cyr-serif",
   display: "swap",
   preload: false,

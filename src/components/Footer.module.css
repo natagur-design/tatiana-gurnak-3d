@@ -143,3 +143,9 @@
     justify-self: start;
   }
 }
+
+:global(:lang(ru)) .heading,
+:global(:lang(uk)) .heading {
+  font-size: clamp(2.75rem, 14vw, 15rem);
+  letter-spacing: -0.04em;
+}

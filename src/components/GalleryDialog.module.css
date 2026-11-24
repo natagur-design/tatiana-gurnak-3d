@@ -277,3 +277,16 @@
     display: none;
   }
 }
+
+:global(:lang(ru)) .title,
+:global(:lang(uk)) .title {
+  font-size: clamp(2rem, 4.4vw, 4.4rem);
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 700px) {
+  :global(:lang(ru)) .title,
+  :global(:lang(uk)) .title {
+    font-size: 10.5vw;
+  }
+}

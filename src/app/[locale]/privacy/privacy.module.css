@@ -50,3 +50,9 @@
   font-size: clamp(1.75rem, 8vw, 9rem);
   overflow-wrap: anywhere;
 }
+
+:global(:lang(ru)) .title,
+:global(:lang(uk)) .title {
+  font-size: clamp(1.5rem, 6.4vw, 7rem);
+  letter-spacing: -0.035em;
+}

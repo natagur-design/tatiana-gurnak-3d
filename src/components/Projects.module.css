@@ -172,3 +172,9 @@
     transform: none;
   }
 }
+
+:global(:lang(ru)) .label,
+:global(:lang(uk)) .label {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  letter-spacing: -0.03em;
+}

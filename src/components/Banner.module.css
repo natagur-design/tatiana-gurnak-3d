@@ -100,14 +100,20 @@
 
 /* Russian and Ukrainian words are longer: smaller type and wider lines. */
 :global(:lang(ru)) .line1,
+:global(:lang(uk)) .line1,
+:global(:lang(ru)) .line2,
+:global(:lang(uk)) .line2 {
+  font-size: clamp(2rem, 5.4vw, 6.5rem);
+  letter-spacing: -0.035em;
+}
+
+:global(:lang(ru)) .line1,
 :global(:lang(uk)) .line1 {
-  font-size: clamp(2.25rem, 5.8vw, 6.5rem);
   max-width: 13ch;
 }
 
 :global(:lang(ru)) .line2,
 :global(:lang(uk)) .line2 {
-  font-size: clamp(2.25rem, 5.8vw, 6.5rem);
   max-width: 18ch;
 }
 
@@ -116,7 +122,7 @@
   :global(:lang(uk)) .line1,
   :global(:lang(ru)) .line2,
   :global(:lang(uk)) .line2 {
-    font-size: 12.5vw;
+    font-size: 10vw;
     max-width: none;
   }
 }
