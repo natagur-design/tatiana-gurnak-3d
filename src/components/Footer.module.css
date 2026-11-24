@@ -149,3 +149,16 @@
   font-size: clamp(2.75rem, 14vw, 15rem);
   letter-spacing: -0.04em;
 }
+
+/* Two words on one line: sized to the width of the page (7.13 and 8.72 are the
+   lengths of the Russian and Ukrainian phrases in em). On a phone the two
+   words simply go on two lines at the size above. */
+@media (min-width: 761px) {
+  :global(:lang(ru)) .heading {
+    font-size: 12.4vw;
+  }
+
+  :global(:lang(uk)) .heading {
+    font-size: 10.1vw;
+  }
+}
