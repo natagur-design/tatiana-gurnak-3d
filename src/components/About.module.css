@@ -24,9 +24,16 @@
 /* The same width as the right-hand column below, so its edges line up with
    the software list and the terms. */
 .photo {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 16 / 9;
   width: 100%;
+  /* Seen for a moment while the picture loads. */
   background: rgb(23 21 18 / 0.07);
+}
+
+.photo img {
+  object-fit: cover;
 }
 
 .columns {

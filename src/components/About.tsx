@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import styles from "./About.module.css";
 
@@ -13,9 +14,14 @@ export default async function About() {
           {t("heading")}
         </h2>
 
-        {/* Placeholder for her portrait, opposite the heading. Swap this div
-            for an <Image> once the photo is chosen. */}
-        <div className={styles.photo} data-reveal="up" aria-hidden="true" />
+        <div className={styles.photo} data-reveal="up">
+          <Image
+            src="/images/about.jpg"
+            alt={t("photoAlt")}
+            fill
+            sizes="(max-width: 800px) 100vw, 45vw"
+          />
+        </div>
       </div>
 
       <div className={styles.columns}>
