@@ -20,8 +20,11 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.section}>
       <div className={styles.layout}>
+        {/* The arrival animation moves the heading; the turning of the word is
+            on the span inside, so the two never mix (otherwise the word can
+            stay upside down after the window is narrowed or a phone turned). */}
         <h2 className={styles.label} data-reveal="side">
-          {t("heading")}
+          <span className={styles.labelText}>{t("heading")}</span>
         </h2>
 
         <div className={styles.main}>
