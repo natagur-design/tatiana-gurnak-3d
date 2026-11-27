@@ -204,7 +204,7 @@ export default function Hero() {
           </span>
         </span>
         <span className={styles.words}>
-          <span className={`${styles.shell} ${styles.shellLeft}`} data-scrub="left">
+          <span className={styles.shell} data-scrub="left">
             <span className={styles.word} data-hero="left">
               {t("word1")}
             </span>

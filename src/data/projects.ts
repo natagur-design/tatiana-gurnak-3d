@@ -29,18 +29,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "living",
-    images: [
-      img("living-2", 2200, 1760),
-      img("living-1", 2200, 1760),
-      img("living-3", 2200, 1760),
-      img("living-4", 2200, 1760),
-      img("living-5", 2200, 1760),
-      img("living-6", 2200, 1760),
-      img("living-7", 2200, 1760),
-    ],
-  },
-  {
     id: "openplan",
     images: [
       img("openplan-1", 2200, 1650),
@@ -50,6 +38,18 @@ export const projects: Project[] = [
       img("openplan-5", 2200, 1650),
       img("openplan-6", 2200, 1650),
       img("openplan-7", 2200, 1650),
+    ],
+  },
+  {
+    id: "living",
+    images: [
+      img("living-2", 2200, 1760),
+      img("living-1", 2200, 1760),
+      img("living-3", 2200, 1760),
+      img("living-4", 2200, 1760),
+      img("living-5", 2200, 1760),
+      img("living-6", 2200, 1760),
+      img("living-7", 2200, 1760),
     ],
   },
   {
@@ -85,13 +85,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "office",
+    id: "closet",
     images: [
-      img("office-1", 2000, 2500),
-      img("office-2", 2000, 2500),
-      img("office-3", 2200, 2543),
-      img("office-4", 2200, 2750),
-      img("office-5", 2000, 2500),
+      img("closet-1", 2000, 2000),
+      img("closet-2", 2000, 2000),
+      img("closet-3", 2000, 2000),
+      img("closet-4", 2000, 2000),
+      img("closet-5", 2000, 2000),
     ],
   },
   {
@@ -118,13 +118,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "closet",
+    id: "office",
     images: [
-      img("closet-1", 2000, 2000),
-      img("closet-2", 2000, 2000),
-      img("closet-3", 2000, 2000),
-      img("closet-4", 2000, 2000),
-      img("closet-5", 2000, 2000),
+      img("office-1", 2000, 2500),
+      img("office-2", 2000, 2500),
+      img("office-3", 2200, 2543),
+      img("office-4", 2200, 2750),
+      img("office-5", 2000, 2500),
     ],
   },
   {

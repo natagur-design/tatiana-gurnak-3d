@@ -98,13 +98,13 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1023px) {
   .burger {
     display: block;
   }
 }
 
-@media (min-width: 761px) {
+@media (min-width: 1024px) {
   .sheet {
     display: none;
   }

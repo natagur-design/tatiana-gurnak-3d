@@ -68,11 +68,13 @@
     0 1px 18px rgb(23 21 18 / 0.75);
 }
 
-/* Two huge words pinned to the left and right edges and cut off by them. */
+/* Two huge words pinned near the left and right edges, with a small margin so
+   that no letter touches the edge of the screen. */
 .words {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: clamp(14px, 1.6vw, 32px);
   font-family: var(--font-serif);
   font-size: clamp(3.5rem, 11vw, 15rem);
   line-height: 0.82;
@@ -83,14 +85,6 @@
 
 .shell {
   display: block;
-}
-
-.shellLeft {
-  margin-left: -0.07em;
-}
-
-.shellRight {
-  margin-right: -0.07em;
 }
 
 .word {
@@ -191,14 +185,14 @@
    so the two big words are set smaller to fit on one line, with tighter letters. */
 :global(:lang(ru)) .words,
 :global(:lang(uk)) .words {
-  font-size: clamp(2.5rem, 8.9vw, 18rem);
+  font-size: clamp(2.5rem, 8.5vw, 18rem);
   letter-spacing: -0.04em;
 }
 
-/* Ukrainian: the first letter of the right word stands under the last letter
-   of the small line above ("...ЦІЯ"), as measured on a 1440 px screen. */
+/* Ukrainian: the first letter of the right word stands about under the last
+   letter of the small line above ("...ЦІЯ"). */
 :global(:lang(uk)) .words {
-  font-size: clamp(2.5rem, 9.1vw, 18rem);
+  font-size: clamp(2.5rem, 8.8vw, 18rem);
 }
 
 @media (max-width: 760px) {

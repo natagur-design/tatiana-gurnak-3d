@@ -47,7 +47,7 @@ export default function MobileMenu({ items, openLabel, closeLabel }: Props) {
 
   // Back to the wide layout: the sheet makes no sense there.
   useEffect(() => {
-    const query = window.matchMedia("(min-width: 761px)");
+    const query = window.matchMedia("(min-width: 1024px)");
     const onChange = () => query.matches && close();
     query.addEventListener("change", onChange);
     return () => query.removeEventListener("change", onChange);

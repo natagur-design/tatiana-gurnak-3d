@@ -6,7 +6,8 @@
   inset: 0 0 auto 0;
   z-index: 50;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  /* Equal side columns keep the name exactly in the middle. */
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 24px;
   padding: 15px var(--margin);
@@ -34,7 +35,13 @@
 .left,
 .right {
   display: flex;
-  gap: clamp(16px, 2.4vw, 36px);
+  /* Narrower gaps on smaller screens, so the longest menu (Ukrainian) fits. */
+  gap: clamp(16px, calc(5vw - 36px), 36px);
+}
+
+/* A menu item never breaks into two lines. */
+.left a {
+  white-space: nowrap;
 }
 
 .right {
@@ -77,7 +84,9 @@
   background-size: 100% 1px;
 }
 
-@media (max-width: 760px) {
+/* Below this width the menu would not fit beside the centred name in every
+   language, so the burger takes over (see MobileMenu). */
+@media (max-width: 1023px) {
   .header {
     grid-template-columns: 1fr auto;
   }
@@ -92,7 +101,7 @@
     grid-column: 1;
   }
 
-  /* On a phone the links live in the burger menu. */
+  /* On phones and tablets the links live in the burger menu. */
   .right {
     display: none;
   }

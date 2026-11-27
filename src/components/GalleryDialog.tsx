@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import type { Project } from "@/data/projects";
+import { useRowScroll } from "@/lib/useRowScroll";
 import styles from "./GalleryDialog.module.css";
 
 gsap.registerPlugin(useGSAP);
@@ -31,7 +32,7 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
   const tp = useTranslations("projects");
   const dialog = useRef<HTMLDialogElement>(null);
   const track = useRef<HTMLUListElement>(null);
-  const [bar, setBar] = useState({ size: 0.4, offset: 0 });
+  const { bar, update, step, rowProps, lineProps } = useRowScroll(track);
   // Index of the photo shown at full size, or null.
   const [zoom, setZoom] = useState<number | null>(null);
   const touchX = useRef(0);
@@ -51,28 +52,12 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
     }
   }, []);
 
-  const update = useCallback(() => {
-    const el = track.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    const size = Math.min(1, el.clientWidth / el.scrollWidth);
-    setBar({ size, offset: max > 0 ? (el.scrollLeft / max) * (1 - size) : 0 });
-  }, []);
-
   // A different project: back to the top and the first photo.
   useEffect(() => {
     track.current?.scrollTo({ left: 0 });
     dialog.current?.scrollTo({ top: 0 });
     update();
   }, [project.id, update]);
-
-  useEffect(() => {
-    const el = track.current;
-    if (!el) return;
-    const observer = new ResizeObserver(update);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [update]);
 
   // Arrival, in the manner of the home page: the title slides in from the
   // left, the rest rises one after another, the photos follow.
@@ -108,16 +93,6 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
     },
     { scope: dialog, dependencies: [project.id] },
   );
-
-  const step = (direction: 1 | -1) => {
-    const el = track.current;
-    if (!el) return;
-    const slide = el.querySelector("li");
-    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
-    const width = slide ? slide.getBoundingClientRect().width + gap : el.clientWidth * 0.8;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    el.scrollBy({ left: direction * width, behavior: reduce ? "auto" : "smooth" });
-  };
 
   const shift = (direction: 1 | -1) =>
     setZoom((current) => (current === null ? null : (current + direction + total) % total));
@@ -172,7 +147,7 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
         </p>
       </div>
 
-      <ul ref={track} className={styles.track} onScroll={update} tabIndex={0}>
+      <ul ref={track} className={styles.track} {...rowProps} tabIndex={0}>
         {project.images.map((image, i) => (
           <li
             key={image.src}
@@ -216,7 +191,7 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
       </ul>
 
       <div className={styles.controls} data-in="fade">
-        <div className={styles.line} aria-hidden="true">
+        <div className={styles.line} {...lineProps} aria-hidden="true">
           <span
             className={styles.thumb}
             style={{

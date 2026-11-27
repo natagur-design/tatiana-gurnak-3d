@@ -7,6 +7,11 @@ export const routing = defineRouting({
   locales: ["en", "ru", "uk"],
   defaultLocale: "en",
   localePrefix: "always",
+  // The site always opens in English, whatever the browser's language is.
+  // Other languages are chosen with the switch in the header. No cookie is
+  // stored (the privacy policy promises that).
+  localeDetection: false,
+  localeCookie: false,
 });
 
 export type Locale = (typeof routing.locales)[number];

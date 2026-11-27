@@ -30,60 +30,60 @@
     "previous": "Previous",
     "next": "Next",
     "items": {
+      "livingroom": {
+        "title": "Modern Luxury Living Room",
+        "kind": "Interior, living room",
+        "description": "A refined living space where elegance, comfort, and contemporary design come together in perfect harmony.\n\nSoft neutral tones, sculptural furniture, elegant wall moldings, and warm golden lighting create a sophisticated and inviting atmosphere. Marble flooring, rich textures, and carefully selected decorative details add a touch of timeless luxury.\n\nAn open-plan living and dining area designed for relaxation, comfort, and modern living."
+      },
+      "openplan": {
+        "title": "Modern Open-Concept Living & Kitchen Design",
+        "kind": "Interior, open plan",
+        "description": "A clean and elegant interior designed with a balance of modern minimalism and luxury comfort. This open-concept living space combines a sophisticated kitchen, cozy lounge area, and panoramic city views to create a calm yet premium atmosphere.\n\nSoft neutral tones, warm lighting, marble textures, and contemporary furniture details bring harmony to every corner of the space."
+      },
+      "living": {
+        "title": "Modern Luxury Living Room Design",
+        "kind": "Interior, living room",
+        "description": "A sophisticated open-concept living space featuring a cozy fireplace, elegant TV wall, and relaxing lounge area. Designed with soft neutral tones, natural textures, and refined lighting to create a timeless and welcoming atmosphere."
+      },
       "bedroom": {
         "title": "Modern Luxury Master Bedroom",
         "kind": "Interior, bedroom",
-        "description": "A calm bedroom built on soft neutral colors, marble flooring, warm lighting and elegant modern details."
-      },
-      "living": {
-        "title": "Modern Luxury Living Room",
-        "kind": "Interior, living room",
-        "description": "A sophisticated open-concept living space featuring a cozy fireplace, elegant TV wall, and relaxing lounge area. Designed with soft neutral tones, natural textures, and refined lighting to create a timeless and welcoming atmosphere."
+        "description": "This interior focuses on balance — soft neutral colors, marble flooring, warm lighting and elegant modern details.\n\nA calm and timeless space created through high-end 3D interior visualization."
       },
       "house": {
         "title": "Private House",
         "kind": "Exterior, house",
-        "description": "A private house with timber and concrete facades and an integrated garage, rendered in daylight."
+        "description": "A contemporary private residence combining warm wood siding, clean architectural lines, glass balconies, and expansive windows. Thoughtfully planned for everyday living with a spacious terrace, built-in garage, and a bright, comfortable layout."
       },
       "kitchen": {
         "title": "Cozy Kitchen",
         "kind": "Interior, kitchen",
-        "description": "A kitchen in soft greige with an island, brass details and daylight from the window."
-      },
-      "office": {
-        "title": "Home Office",
-        "kind": "Interior, office",
-        "description": "A home office with built-in shelving, warm timber panels and a ceiling fan."
-      },
-      "openplan": {
-        "title": "Open-Concept Living & Kitchen",
-        "kind": "Interior, open plan",
-        "description": "A clean and elegant interior that balances modern minimalism and luxury comfort. A sophisticated kitchen, a cozy lounge area and panoramic city views in one open space."
-      },
-      "chalet": {
-        "title": "Mountain Chalet",
-        "kind": "Exterior, house",
-        "description": "A mountain chalet with timber cladding and a dark metal roof, a terrace with a hot tub and a view over the snowy slope."
-      },
-      "luxbedroom": {
-        "title": "Modern Luxury Bedroom",
-        "kind": "Interior, bedroom",
-        "description": "A bedroom with a travertine and brass headboard wall, soft bouclé seating and a calm, warm palette."
-      },
-      "livingroom": {
-        "title": "Living Room",
-        "kind": "Interior, living room",
-        "description": "An open living and dining area with a curved sofa, a marble table and a tall window, lit by sculptural pendant lights."
+        "description": "A bright, spacious kitchen with soft grey cabinetry, warm brass accents, fluted marble backsplash, and a large island bathed in natural light. Designed for slow mornings and easy gatherings, with quiet elegance in every detail."
       },
       "closet": {
         "title": "Modern Walk-In Closet",
         "kind": "Interior, wardrobe",
-        "description": "A walk-in closet in graphite with open shelving, drawers and soft built-in lighting."
+        "description": "A modern walk-in closet where functionality, thoughtful storage organization, and elegant design come together in one harmonious space.\n\nOpen shelving, spacious drawers, carefully arranged clothing, and integrated LED lighting create a practical and elegant storage solution.\n\nWarm grey tones, minimalist metal frames, and herringbone wood flooring bring a sense of harmony, comfort, and sophistication to the space."
+      },
+      "chalet": {
+        "title": "Mountain Chalet",
+        "kind": "Exterior, house",
+        "description": "A striking contemporary chalet perched on a snowy cliffside, blending warm timber cladding, dark metal roofing, and panoramic windows. Designed for effortless winter escapes with private terraces, outdoor hot tubs, and cozy mountain views."
+      },
+      "luxbedroom": {
+        "title": "Modern Luxury Bedroom Design",
+        "kind": "Interior, bedroom",
+        "description": "This space combines soft neutral tones, natural stone textures, warm lighting, and refined details to create a relaxing atmosphere. The upholstered bed, integrated lighting, and carefully selected finishes bring balance between modern luxury and everyday comfort.\n\nThe result is a bedroom that feels both welcoming and elevated — a private retreat designed for rest and relaxation."
+      },
+      "office": {
+        "title": "Home Office",
+        "kind": "Interior, office",
+        "description": "A refined home office with textured geometric wall panels, brass accents, a sleek glass partition, and a cozy lounge sofa. Thoughtful storage, an ergonomic desk setup, and calm lighting come together for focused work and everyday comfort."
       },
       "study": {
-        "title": "Living and Study Space",
+        "title": "Modern Living & Study Space",
         "kind": "Interior, living room and study",
-        "description": "A compact living room with a work corner by the window and a timber wall unit with integrated lighting."
+        "description": "A multifunctional interior designed for work, relaxation, and everyday living.\n\nA comfortable lounge area, functional workspace, custom storage, and warm lighting come together in one modern space."
       }
     }
   },

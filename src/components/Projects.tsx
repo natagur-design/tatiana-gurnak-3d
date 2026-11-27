@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { projects, type Project } from "@/data/projects";
+import { useRowScroll } from "@/lib/useRowScroll";
 import GalleryDialog from "./GalleryDialog";
 import styles from "./Projects.module.css";
 
@@ -14,26 +15,7 @@ export default function Projects() {
   // Opened with the keyboard? Then focus goes back to the card with its ring.
   // Opened with a mouse or a finger: no ring should be left behind.
   const byKeyboard = useRef(false);
-  // Where the thin progress line's thumb sits, as fractions of the line.
-  const [bar, setBar] = useState({ size: 0.4, offset: 0 });
-
-  const update = () => {
-    const el = track.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    const size = Math.min(1, el.clientWidth / el.scrollWidth);
-    setBar({ size, offset: max > 0 ? (el.scrollLeft / max) * (1 - size) : 0 });
-  };
-
-  const step = (direction: 1 | -1) => {
-    const el = track.current;
-    if (!el) return;
-    const card = el.querySelector("li");
-    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
-    const width = card ? card.getBoundingClientRect().width + gap : el.clientWidth * 0.8;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    el.scrollBy({ left: direction * width, behavior: reduce ? "auto" : "smooth" });
-  };
+  const { bar, step, rowProps, lineProps } = useRowScroll(track);
 
   return (
     <section id="projects" className={styles.section}>
@@ -46,7 +28,7 @@ export default function Projects() {
           <ul
             ref={track}
             className={styles.track}
-            onScroll={update}
+            {...rowProps}
             tabIndex={0}
             aria-label={t("heading")}
           >
@@ -78,7 +60,7 @@ export default function Projects() {
           </ul>
 
           <div className={styles.controls}>
-            <div className={styles.line} aria-hidden="true">
+            <div className={styles.line} {...lineProps} aria-hidden="true">
               <span
                 className={styles.thumb}
                 style={{

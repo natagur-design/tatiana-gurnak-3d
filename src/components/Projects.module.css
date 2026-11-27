@@ -195,3 +195,32 @@
     letter-spacing: -0.03em;
   }
 }
+
+/* The line can be clicked and dragged: a taller invisible area around it. */
+.line {
+  cursor: pointer;
+  touch-action: none;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  inset: -14px 0;
+}
+
+/* With a mouse the row can be grabbed and pulled. */
+@media (hover: hover) and (pointer: fine) {
+  .track {
+    cursor: grab;
+  }
+}
+
+.track[data-dragging="true"] {
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.track[data-dragging="true"],
+.track[data-dragging="true"] * {
+  cursor: grabbing;
+}
