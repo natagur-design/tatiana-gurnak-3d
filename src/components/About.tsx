@@ -16,10 +16,11 @@ export default async function About() {
 
         <div className={styles.photo} data-reveal="up">
           <Image
-            src="/images/about.jpg"
+            src="/images/about.webp"
             alt={t("photoAlt")}
             fill
             sizes="(max-width: 800px) 100vw, 45vw"
+            quality={90}
           />
         </div>
       </div>

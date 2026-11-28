@@ -26,7 +26,7 @@
 .photo {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   width: 100%;
   /* Seen for a moment while the picture loads. */
   background: rgb(23 21 18 / 0.07);

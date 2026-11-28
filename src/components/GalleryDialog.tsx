@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import type { Project } from "@/data/projects";
+import { nextSizes, slideSizes, viewerSizes } from "@/lib/imageSizes";
 import { useRowScroll } from "@/lib/useRowScroll";
 import styles from "./GalleryDialog.module.css";
 
@@ -165,7 +166,8 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
                 src={image.src}
                 alt=""
                 fill
-                sizes="(min-width: 900px) 60vw, 90vw"
+                sizes={slideSizes(image, i === 0)}
+                quality={90}
                 className={styles.image}
                 priority={i === 0}
                 onLoad={loaded}
@@ -180,7 +182,8 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
               src={next.images[0].src}
               alt=""
               fill
-              sizes="(min-width: 900px) 40vw, 80vw"
+              sizes={nextSizes(next.images[0])}
+              quality={85}
               className={styles.nextImage}
               onLoad={loaded}
             />
@@ -236,7 +239,8 @@ export default function GalleryDialog({ project, next, onNext, onClose }: Props)
               src={project.images[zoom].src}
               alt={`${title}, ${t("counter", { current: zoom + 1, total })}`}
               fill
-              sizes="100vw"
+              sizes={viewerSizes(project.images[zoom])}
+              quality={90}
               className={styles.viewerPhoto}
               priority
             />

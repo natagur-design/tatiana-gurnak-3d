@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { projects, type Project } from "@/data/projects";
+import { coverSizes } from "@/lib/imageSizes";
 import { useRowScroll } from "@/lib/useRowScroll";
 import GalleryDialog from "./GalleryDialog";
 import styles from "./Projects.module.css";
@@ -51,7 +52,8 @@ export default function Projects() {
                       src={project.images[0].src}
                       alt=""
                       fill
-                      sizes="(min-width: 900px) 22vw, 60vw"
+                      sizes={coverSizes(project.images[0])}
+                      quality={85}
                       className={styles.image}
                     />
                   </span>

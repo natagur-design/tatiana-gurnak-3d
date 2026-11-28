@@ -38,7 +38,7 @@ Open <http://localhost:3000/en>.
 
 ```
 messages/<lang>.json      all texts, one file per language (en, ru, uk)
-public/images/            portfolio photos, named <project>-<number>.jpg
+public/images/            portfolio photos (WebP), named <project>-<number>.webp
 public/hero/, banner/     frame sequences for the two scroll-driven videos
 src/app/[locale]/         the page, the privacy policy page, layout and metadata
 src/components/           Header, Hero, Projects, Banner, Services, About, Footer, ...
@@ -57,6 +57,17 @@ src/lib/frames.ts         plays a frame sequence on a canvas, driven by scroll
   `projects.items.<id>`.
 - **Texts:** everything visible is in `messages/en.json`, `messages/ru.json` and `messages/uk.json`. Keep the three files in step: the same keys in each.
 - **Add a language:** add a file in `messages/`, add the code to `locales` in `src/i18n/routing.ts` (and its label to `LOCALE_LABELS`), and, if the script needs other letters than Latin, a font in `src/app/[locale]/layout.tsx`. The language switcher picks it up.
+
+## Images
+
+- The site uses WebP files in `public/images`. The JPEG originals are kept in an archive outside
+  the repository.
+- To prepare a new photo, convert the full-size original to WebP at quality 92 (long side up to
+  3000 px), for example with [Squoosh](https://squoosh.app) or `sharp`, and put its real pixel
+  size into `src/data/projects.ts`.
+- `next/image` makes smaller copies for each screen. The qualities and widths are set in
+  `next.config.ts`, the `sizes` hints in `src/lib/imageSizes.ts`.
+- AVIF is not used: in a test on the renders it was only about 13% smaller than WebP.
 
 ## Environment
 

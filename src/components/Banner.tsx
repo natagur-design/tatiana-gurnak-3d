@@ -99,7 +99,13 @@ export default function Banner() {
   return (
     <section ref={root} className={styles.banner} aria-label={`${t("line1")} ${t("line2")}`}>
       <div className={styles.media}>
-        <Image src={frameSrc(0)} alt="" fill sizes="100vw" className={styles.image} />
+        <Image
+          src={frameSrc(0)}
+          alt=""
+          fill
+          sizes="(max-aspect-ratio: 16/9) 178vh, 100vw"
+          className={styles.image}
+        />
         <canvas ref={canvas} className={styles.canvas} aria-hidden="true" />
         <div className={styles.veil} aria-hidden="true" />
       </div>

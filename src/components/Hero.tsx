@@ -188,7 +188,7 @@ export default function Hero() {
             fill
             loading="eager"
             fetchPriority="high"
-            sizes="100vw"
+            sizes="(max-aspect-ratio: 16/9) 178vh, 100vw"
             className={styles.poster}
           />
           <canvas ref={canvas} className={styles.canvas} aria-hidden="true" />
